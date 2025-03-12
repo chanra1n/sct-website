@@ -2,3 +2,8 @@
     font-family: 'gamer';
     src: url('../fonts/gamer.ttf') format('truetype');
 }
+
+@font-face {
+    font-family: 'pst';
+    src: url('../fonts/pst.ttf') format('truetype');
+}
