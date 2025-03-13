@@ -6,191 +6,214 @@
     <title>Game Download Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.6.22/css/uikit.min.css" />
 <style>
-    /* General Styles */
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
+            /* General Styles */
+            *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-html, body {
-    width: 100%; /* Ensure full width */
-    height: 100%; /* Ensure full height */
-    font-family: 'pst', sans-serif;
-    background: black;
-    color: white;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    overflow-y: hidden; /* Prevent vertical scrolling */
-    display: flex;
-    flex-direction: column;
-    filter: sepia(1) hue-rotate(45deg) blur(0px);
-    font-size: 16px; /* Base font size for rem scaling */
-}
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: 'pst', sans-serif;
+            background: black;
+            color: white;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            filter: sepia(1) hue-rotate(45deg) blur(0px);
+            font-size: 16px;
+        }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'gamer';
-    text-transform: uppercase;
-    margin: 0;
-}
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'gamer';
+            text-transform: uppercase;
+            margin: 0;
+        }
 
-/* Background Layers */
-#background-image, #fog-layer {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    pointer-events: none;
-    user-select: none;
-}
+        /* Background Layers */
+        #background-image, #fog-layer {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+            user-select: none;
+        }
 
-#background-image {
-    filter: blur(0.15rem);
-    transform: scale(1.1);
-}
+        #background-image {
+            filter: blur(0.15rem);
+            transform: scale(1.1);
+        }
 
-#fog-layer {
-    z-index: 1;
-    mix-blend-mode: luminosity;
-    opacity: 0.6;
-    filter: invert(1) brightness(0.4) contrast(1.1) blur(0.625rem);
-    transform: scale(1.05);
-}
+        #fog-layer {
+            z-index: 1;
+            mix-blend-mode: luminosity;
+            opacity: 0.6;
+            filter: invert(1) brightness(0.4) contrast(1.1) blur(0.625rem);
+            transform: scale(1.05);
+        }
 
-/* Navbar */
-.uk-navbar-container {
-    background: black !important;
-    padding: 0.75rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    margin: 0.5rem;
-}
+        /* Navbar */
+        .uk-navbar-container {
+            background: black !important;
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            margin: 0.5rem;
+        }
 
-.uk-navbar-left img {
-    width: 7.8125rem;
-    height: auto;
-}
+        .uk-navbar-left img {
+            width: 7.8125rem;
+            height: auto;
+        }
 
-.uk-navbar-right button {
-    background: black;
-    border: 0.156rem solid green;
-    padding: 0rem 1rem;
-    display: flex;
-    align-items: center;
-    color: green;
-    font-family: 'gamer';
-    font-size: 2rem;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
+        .uk-navbar-right button {
+            background: black;
+            border: 0.156rem solid green;
+            padding: 0rem 1rem;
+            display: flex;
+            align-items: center;
+            color: green;
+            font-family: 'gamer';
+            font-size: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
 
-.uk-navbar-right button i {
-    font-size: 1.25rem;
-    margin-right: 0.5rem;
-    font-weight: 900;
-}
+        .uk-navbar-right button i {
+            font-size: 1.25rem;
+            margin-right: 0.5rem;
+            font-weight: 900;
+        }
 
-.uk-navbar-right button span {
-    margin-bottom: 0.25rem;
-}
+        .uk-navbar-right button span {
+            margin-bottom: 0.25rem;
+        }
 
-.uk-navbar-right button:hover {
-    background: green;
-    color: black;
-}
+        .uk-navbar-right button:hover {
+            background: green;
+            color: black;
+        }
 
-/* Main Content */
-#pageBody {
-    flex-grow: 1;
-    width: 100%;
-    max-width: 100%;
-    background-color: black;
-    color: white;
-    padding: 1.25rem;
-    margin: 0.5rem;
-    box-sizing: border-box;
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    overflow: hidden; /* Disable overflow on pageBody */
-    height: 100vh; /* Ensure the body takes the full viewport height */
-    max-height: 100vh; /* Ensure no vertical overflow */
-}
+        /* Main Content */
+        #pageBody {
+            flex-grow: 1;
+            width: calc(100% - 1rem);
+            max-width: 100%;
+            background-color: black;
+            color: white;
+            padding: 1.25rem;
+            margin: 0.5rem;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            overflow: hidden;
+            height: 100vh;
+            max-height: 100vh;
+            margin-top: 0px;
+        }
 
-.content-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start; /* Align items to the top to avoid pushing text */
-    justify-content: space-between;
-    width: 100%;
-    gap: 2rem;
-    flex-wrap: nowrap; /* Ensures both sections stay on the same line */
-    height: 100%;
-}
+        .content-wrapper {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            width: 100%;
+            gap: 2rem;
+            flex-wrap: nowrap;
+            height: 100%;
+        }
 
-.text-section {
-    flex: 1;
-    max-width: 30rem; /* Limits text width */
-    min-width: 25rem; /* Prevents text from being too narrow */
-    padding: 0.5rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+        .text-section {
+            flex: 1;
+            max-width: 30rem;
+            min-width: 25rem;
+            padding: 0.5rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
-.image-section {
-    width: 50%; /* Limit the width to 50% of the parent */
-    position: relative;
-    height: 0;
-    padding-bottom: 50%; /* Forces square aspect ratio */
-    overflow: hidden; /* Prevents overflow */
-    background-color: black; /* Prevents any unwanted background */
-    display: flex; /* Allow flexbox layout */
-    justify-content: center; /* Center the image */
-    max-height: 100%; /* Prevent image overflow */
-}
+        /* Image Grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            width: 50%;
+            height: 100%;
+            max-height: 100%;
+            overflow-y: auto;
+            position: relative;
+            overflow-x:hidden;
+        }
 
-.image-section img {
-    object-fit: cover; /* Ensures the image covers the square without distortion */
-    position: absolute; /* Position it absolutely to fill the square */
-    top: 0;
-    left: 0;
-    width: 100%; /* Ensure it stretches across the square */
-    height: 100%; /* Ensure it fills the square completely */
-    box-sizing: border-box;
-}
+        /* The Hider */
+        #image-grid-hider {
+            background-color: transparent;
+            position: sticky; /* Change to sticky */
+            bottom: 0; /* Stick to bottom */
+            left: 0;
+            width: 250%;
+            height: 100px;
+            background-image: linear-gradient(0deg, black, transparent);
+            z-index: 2;
+            transform:scale(1.05);
+        }
 
-/* Text Styling */
-#pageBody h1 {
-    font-size: 10vmin;
-    line-height: normal;
-    color: white;
-    margin-top: -0.625rem;
-}
+        .image-grid .image-section {
+            position: relative;
+            height: 0;
+            padding-bottom: 100%;
+            overflow: hidden;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-#pageBody h2 {
-    font-size: 5vmin;
-}
+        .image-grid .image-section img {
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
 
-#pageBody p {
-    font-family: 'pst';
-    font-size: 0.75rem;
-    text-transform: none;
-    text-transform: uppercase;
-}
+        /* Text Styling */
+        #pageBody h1 {
+            font-size: 10vmin;
+            line-height: normal;
+            color: white;
+            margin-top: -0.625rem;
+        }
 
-#pageBody hr {
-    border: 0.125rem solid green;
-    opacity: 50%;
-    margin-top: 0.9375rem;
-}
+        #pageBody h2 {
+            font-size: 5vmin;
+        }
+
+        #pageBody p {
+            font-family: 'pst';
+            font-size: 0.75rem;
+            text-transform: none;
+            text-transform: uppercase;
+        }
+
+        #pageBody hr {
+            border: 0.125rem solid green;
+            opacity: 50%;
+            margin-top: 0.9375rem;
+        }
 
 /* Responsive */
 @media (max-width: 48rem) {
@@ -205,17 +228,26 @@ h1, h2, h3, h4, h5, h6 {
         padding: 0.5rem;
     }
 
-    .image-section {
-        justify-content: center;
-        width: 100%; /* Make the image section take up 100% of the screen width */
-        padding-bottom: 100%; /* Maintain a square aspect ratio */
+    .image-grid {
+        width: 100%; /* Full width of the screen */
+        grid-template-columns: 1fr; /* 1 column for mobile */
     }
 
-    .image-section img {
-        width: 100%; /* Ensure the image stretches across the full width */
-        height: 100%; /* Ensure the image also covers the height */
+    .image-grid .image-section {
+        width: 100%;
+        padding-bottom: 100%; /* Maintain square aspect ratio */
+    }
+
+    .image-grid .image-section img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #image-grid-hider {
+        width: 100%; /* Ensure hider also takes full width */
     }
 }
+
 </style>
     <link rel="stylesheet" href="assets/css/fonts.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" />
@@ -248,9 +280,24 @@ h1, h2, h3, h4, h5, h6 {
             <hr>
             <p>SCAM CENTER TYCOON is a business simulation game where you can build and manage your own scam center. Hire employees, upgrade your office, and expand your business to become the biggest scam center in the world!</p>
         </div>
-        <!-- Right Image Section -->
-        <div class="image-section">
-            <img src="assets/images/background.png" alt="Game Cover">
+
+        <!-- Right Image Grid -->
+        <div class="image-grid">
+            <div class="image-section">
+                <img src="assets/images/background.png" alt="Game Cover">
+            </div>
+            <div class="image-section">
+                <img src="assets/images/background.png" alt="Game Cover">
+            </div>
+            <div class="image-section">
+                <img src="assets/images/background.png" alt="Game Cover">
+            </div>
+            <div class="image-section">
+                <img src="assets/images/background.png" alt="Game Cover">
+            </div>
+
+            <div id="image-grid-hider"></div>
+
         </div>
     </div>
 </div>
