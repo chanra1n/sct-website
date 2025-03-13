@@ -78,7 +78,7 @@ h1, h2, h3, h4, h5, h6 {
     height: auto;
 }
 
-.uk-navbar-right button {
+.uk-navbar-right button, #pageBody button {
     background: black;
     border: 0.156rem solid green;
     padding: 0rem 1rem;
@@ -91,19 +91,32 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.3s ease-in-out;
 }
 
-.uk-navbar-right button i {
+.uk-navbar-right button i, #pageBody button i {
     font-size: 1.25rem;
     margin-right: 0.5rem;
     font-weight: 900;
 }
 
-.uk-navbar-right button span {
+.uk-navbar-right button span, #pageBody button span {
     margin-bottom: 0.25rem;
 }
 
-.uk-navbar-right button:hover {
+.uk-navbar-right button:hover, #pageBody button:hover {
     background: green;
     color: black;
+}
+
+#pageBody button {
+    margin-top: 40px;
+    background-color: green;
+    color: black;
+    padding: 0.5rem 4rem;
+    font-size: 2.5rem;
+}
+
+#pageBody button i {
+    margin-right: 1rem;
+    font-size: 1.5rem;
 }
 
 /* Main Content */
@@ -228,6 +241,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 48rem) {
+
+    #pageBody button {
+        display:none;
+    }
+
     .content-wrapper {
         flex-direction: column;
         align-items: flex-start;
@@ -347,6 +365,12 @@ h1, h2, h3, h4, h5, h6 {
             <p>
                 Expand a burgeoning scam operation by renting or buying call centers, make shady deals for cash, and hire interns to boost profits. Manage your operation's size to avoid detection, invest in a legal team to defend against police, and navigate tax season with creative accounting. How long can you last?
             </p>
+
+            <button>
+                <i class="ri-external-link-line"></i>
+                <span>BUY NOW</span>
+            </button>
+
         </div>
 
         <!-- Right Image Grid -->
