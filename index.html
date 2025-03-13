@@ -10,256 +10,250 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" />
     <style>
         /* General Styles */
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-html, body {
-    width: 100%;
-    height: 100%;
-    font-family: 'pst';
-    background: black;
-    color: white;
-    overflow: hidden; /* Ensures no scrolling */
-    display: flex;
-    flex-direction: column;
-    filter: sepia(1) hue-rotate(45deg) blur(0px);
-    font-size: 16px;
-}
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: 'pst';
+            background: black;
+            color: white;
+            overflow: hidden; /* Ensures no scrolling */
+            display: flex;
+            flex-direction: column;
+            filter: sepia(1) hue-rotate(45deg) blur(0px);
+            font-size: 16px;
+        }
 
-/* Ensure no horizontal or vertical overflow on the page */
-html, body {
-    overflow-x: hidden; /* Prevent horizontal scroll */
-    overflow-y: hidden; /* Prevent vertical scroll */
-}
-
-h1, h2, h3, h4, h5, h6 {
+        h1, h2, h3, h4, h5, h6 {
             font-family: 'gamer';
             text-transform: uppercase;
             margin: 0;
         }
 
-/* Background Layers */
-#background-image, #fog-layer {
-    position: absolute;
-    inset: 0;
-    width: 100vw; /* Ensure background fills the entire width of the viewport */
-    height: 100vh; /* Ensure background fills the entire height of the viewport */
-    object-fit: cover;
-    pointer-events: none;
-    user-select: none;
-}
+        /* Background Layers */
+        #background-image, #fog-layer {
+            position: absolute;
+            inset: 0;
+            width: 100vw; /* Ensure background fills the entire width of the viewport */
+            height: 100vh; /* Ensure background fills the entire height of the viewport */
+            object-fit: cover;
+            pointer-events: none;
+            user-select: none;
+        }
 
-#background-image {
-    filter: blur(0.15rem);
-    transform: scale(1.1);
-}
+        #background-image {
+            filter: blur(0.15rem);
+            transform: scale(1.1);
+        }
 
-#fog-layer {
-    z-index: 1;
-    mix-blend-mode: luminosity;
-    opacity: 0.6;
-    filter: invert(1) brightness(0.4) contrast(1.1) blur(0.625rem);
-    transform: scale(1.05);
-}
+        #fog-layer {
+            z-index: 1;
+            mix-blend-mode: luminosity;
+            opacity: 0.6;
+            filter: invert(1) brightness(0.4) contrast(1.1) blur(0.625rem);
+            transform: scale(1.05);
+        }
 
-/* Navbar */
-.uk-navbar-container {
-    background: black !important;
-    padding: 0.75rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    margin: 0.5rem;
-}
+        /* Navbar */
+        .uk-navbar-container {
+            background: black !important;
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            margin: 0.5rem;
+        }
 
-.uk-navbar-left img {
-    width: 7.8125rem;
-    height: auto;
-}
+        .uk-navbar-left img {
+            width: 7.8125rem;
+            height: auto;
+        }
 
-.uk-navbar-right button {
-    background: black;
-    border: 0.156rem solid green;
-    padding: 0rem 1rem;
-    display: flex;
-    align-items: center;
-    color: green;
-    font-family: 'gamer';
-    font-size: 2rem;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
+        .uk-navbar-right button {
+            background: black;
+            border: 0.156rem solid green;
+            padding: 0rem 1rem;
+            display: flex;
+            align-items: center;
+            color: green;
+            font-family: 'gamer';
+            font-size: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
 
-.uk-navbar-right button i {
-    font-size: 1.25rem;
-    margin-right: 0.5rem;
-    font-weight: 900;
-}
+        .uk-navbar-right button i {
+            font-size: 1.25rem;
+            margin-right: 0.5rem;
+            font-weight: 900;
+        }
 
-.uk-navbar-right button span {
-    margin-bottom: 0.25rem;
-}
+        .uk-navbar-right button span {
+            margin-bottom: 0.25rem;
+        }
 
-.uk-navbar-right button:hover {
-    background: green;
-    color: black;
-}
+        .uk-navbar-right button:hover {
+            background: green;
+            color: black;
+        }
 
-/* Main Content */
-#pageBody {
-    flex-grow: 1;
-    width: calc(100% - 1rem);
-    max-width: 100%;
-    background-color: black;
-    color: white;
-    padding: 1.25rem;
-    margin: 0.5rem;
-    box-sizing: border-box;
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    overflow: hidden; /* Ensure no overflow here */
-    height: 100vh;
-    max-height: 100vh;
-    margin-top: 0px;
-}
+        /* Main Content */
+        #pageBody {
+            flex-grow: 1;
+            width: calc(100% - 1rem);
+            max-width: 100%;
+            background-color: black;
+            color: white;
+            padding: 1.25rem;
+            margin: 0.5rem;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            overflow: hidden; /* Ensure no overflow here */
+            height: 100vh;
+            max-height: 100vh;
+            margin-top: 0px;
+        }
 
-/* Content Wrapper */
-.content-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    width: 100%;
-    gap: 2rem;
-    flex-wrap: nowrap;
-    height: 100%;
-}
+        /* Content Wrapper */
+        .content-wrapper {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            width: 100%;
+            gap: 2rem;
+            flex-wrap: nowrap;
+            height: 100%;
+        }
 
-/* Text Section */
-.text-section {
-    flex: 0 1 auto;
-    max-width: 30rem;
-    min-width: 25rem;
-    padding: 0.5rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+        /* Text Section */
+        .text-section {
+            flex: 0 1 auto;
+            max-width: 30rem;
+            min-width: 25rem;
+            padding: 0.5rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
-/* Image Grid */
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    width: 50%;
-    height: 100%;
-    max-height: 100%;
-    overflow-y: auto;
-    position: relative;
-    overflow-x: hidden; /* Ensure no horizontal scrolling */
-    flex-grow: 1;
-}
+        /* Image Grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            width: 50%;
+            height: 100%;
+            max-height: 100%;
+            overflow-y: auto;
+            position: relative;
+            overflow-x: hidden; /* Ensure no horizontal scrolling */
+            flex-grow: 1;
+        }
 
-/* The Hider */
-#image-grid-hider {
-    background-color: transparent;
-    position: sticky;
-    bottom: 0;
-    left: 0;
-    width: 250%;
-    height: 100px;
-    background-image: linear-gradient(0deg, black, transparent);
-    z-index: 2;
-    transform: scale(1.05);
-}
+        /* The Hider */
+        #image-grid-hider {
+            background-color: transparent;
+            position: sticky;
+            bottom: 0;
+            left: 0;
+            width: 250%;
+            height: 100px;
+            background-image: linear-gradient(0deg, black, transparent);
+            z-index: 2;
+            transform: scale(1.05);
+        }
 
-.image-grid .image-section {
-    position: relative;
-    height: 0;
-    padding-bottom: 100%;
-    overflow: hidden;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        .image-grid .image-section {
+            position: relative;
+            height: 0;
+            padding-bottom: 100%;
+            overflow: hidden;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.image-grid .image-section img {
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
+        .image-grid .image-section img {
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
 
-/* Text Styling */
-#pageBody h1 {
-    font-size: 10vmin;
-    line-height: normal;
-    color: white;
-    margin-top: -0.625rem;
-}
+        /* Text Styling */
+        #pageBody h1 {
+            font-size: 10vmin;
+            line-height: normal;
+            color: white;
+            margin-top: -0.625rem;
+        }
 
-#pageBody h2 {
-    font-size: 5vmin;
-    color: green;
-}
+        #pageBody h2 {
+            font-size: 5vmin;
+            color: green;
+        }
 
-#pageBody p {
-    font-family: 'pst';
-    font-size: 0.75rem;
-    text-transform: none;
-    text-transform: uppercase;
-}
+        #pageBody p {
+            font-family: 'pst';
+            font-size: 0.75rem;
+            text-transform: none;
+            text-transform: uppercase;
+        }
 
-#pageBody hr {
-    border: 0.125rem solid green;
-    margin-top: 0.5rem;
-}
+        #pageBody hr {
+            border: 0.125rem solid green;
+            margin-top: 0.5rem;
+        }
 
-/* Responsive */
-@media (max-width: 48rem) {
-    .content-wrapper {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+        /* Responsive */
+        @media (max-width: 48rem) {
+            .content-wrapper {
+                flex-direction: column;
+                align-items: flex-start;
+            }
 
-    .text-section {
-        max-width: 100%;
-        min-width: unset;
-        padding: 0.5rem;
-    }
+            .text-section {
+                max-width: 100%;
+                min-width: unset;
+                padding: 0.5rem;
+            }
 
-    .image-grid {
-        width: 100%;
-        grid-template-columns: 1fr;
-        height: 50%;
-    }
+            .image-grid {
+                width: 100%;
+                grid-template-columns: 1fr;
+                height: 50%;
+            }
 
-    .image-grid .image-section {
-        width: 100%;
-        padding-bottom: 100%; /* Maintain square aspect ratio */
-    }
+            .image-grid .image-section {
+                width: 100%;
+                padding-bottom: 100%; /* Maintain square aspect ratio */
+            }
 
-    .image-grid .image-section img {
-        width: 100%;
-        height: 100%;
-    }
+            .image-grid .image-section img {
+                width: 100%;
+                height: 100%;
+            }
 
-    #image-grid-hider {
-        width: 100%; /* Ensure hider also takes full width */
-    }
-}
+            #image-grid-hider {
+                width: 100%; /* Ensure hider also takes full width */
+            }
+        }
     </style>
 </head>
 <body>
