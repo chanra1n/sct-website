@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>Game Download Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.6.22/css/uikit.min.css" />
-<style>
-            /* General Styles */
-            *, *::before, *::after {
+    <style>
+        /* General Styles */
+        *, *::before, *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -137,7 +136,7 @@
         }
 
         .text-section {
-            flex: 1;
+            flex: 0 1 auto;  /* Ensures text section grows to fit content */
             max-width: 30rem;
             min-width: 25rem;
             padding: 0.5rem;
@@ -156,6 +155,7 @@
             overflow-y: auto;
             position: relative;
             overflow-x:hidden;
+            flex-grow: 1; /* Take the remaining height */
         }
 
         /* The Hider */
@@ -216,41 +216,40 @@
             margin-top: 0.5rem;
         }
 
-/* Responsive */
-@media (max-width: 48rem) {
-    .content-wrapper {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+        /* Responsive */
+        @media (max-width: 48rem) {
+            .content-wrapper {
+                flex-direction: column;
+                align-items: flex-start;
+            }
 
-    .text-section {
-        max-width: 100%;
-        min-width: unset;
-        padding: 0.5rem;
-    }
+            .text-section {
+                max-width: 100%;
+                min-width: unset;
+                padding: 0.5rem;
+            }
 
-    .image-grid {
-        width: 100%; /* Full width of the screen */
-        grid-template-columns: 1fr; /* 1 column for mobile */
-        height:50%;
-    }
+            .image-grid {
+                width: 100%; /* Full width of the screen */
+                grid-template-columns: 1fr; /* 1 column for mobile */
+                height:50%;
+            }
 
-    .image-grid .image-section {
-        width: 100%;
-        padding-bottom: 100%; /* Maintain square aspect ratio */
-    }
+            .image-grid .image-section {
+                width: 100%;
+                padding-bottom: 100%; /* Maintain square aspect ratio */
+            }
 
-    .image-grid .image-section img {
-        width: 100%;
-        height: 100%;
-    }
+            .image-grid .image-section img {
+                width: 100%;
+                height: 100%;
+            }
 
-    #image-grid-hider {
-        width: 100%; /* Ensure hider also takes full width */
-    }
-}
-
-</style>
+            #image-grid-hider {
+                width: 100%; /* Ensure hider also takes full width */
+            }
+        }
+    </style>
     <link rel="stylesheet" href="assets/css/fonts.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" />
 </head>
@@ -299,13 +298,18 @@
             </div>
 
             <div id="image-grid-hider"></div>
-
         </div>
     </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.6.22/js/uikit.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.6.22/js/uikit-icons.min.js"></script>
+
+<script>
+    window.onload = function() {
+        window.scrollTo(0, 0);
+    }
+</script>
 
 </body>
 </html>
