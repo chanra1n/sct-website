@@ -44,7 +44,6 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0px 5px 0px #00000050;
         }
         
         nav {
@@ -127,7 +126,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 105%;
+    height: 100%;
     background-color: #005000;
     mix-blend-mode: hard-light;
         }
@@ -150,8 +149,8 @@
         .hero-content p {
             font-size: 2vh;
     background-color: black;
-    padding: 10px 20px;
-    margin-top: -15px;
+    padding: 15px 20px;
+    margin-top: -20px;
     color: #00ff00;
         }
         
@@ -202,11 +201,26 @@
     color: #00ff00;
 }
 
+.about-text li {
+    margin-bottom: 10px;
+    list-style: square;
+}
+
 .about-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     filter: sepia(0) hue-rotate(-45deg) blur(0px) brightness(70%);
+}
+
+@media (max-width: 768px) {
+    .about-image img {
+        display: none;
+    }
+
+    .about-content {
+        display: block; /* Stack the elements on smaller screens */
+    }
 }
 
         
@@ -310,9 +324,20 @@
         <h2>THE ULTIMATE START-UP SIMULATOR</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>Welcome to SCAM CENTER TYCOON, the game where you can build your own scam empire! Start from scratch and work your way up to become the ultimate scammer.</p>
-                <p>In this game, you'll manage resources, hire employees, and develop new scams to outsmart your competitors. Can you rise to the top and become the most notorious scammer in the world?</p>
-                <p>Join us on this thrilling adventure and prove your skills in SCAM CENTER TYCOON!</p>
+                TRY YOUR HAND IN THE WORLD OF BUSINESS! Expand a burgeoning scam operation by...
+                <br>
+                <ul>
+                    <li>Renting/buying call center buildings</li>
+                    <li>Making shady trades for cash</li>
+                    <li>Hiring interns, lots of interns</li>
+                    <li>Managing your size to avoid detection</li>
+                    <li>Investing in your legal defense</li>
+                    <li>Training your expert legal team</li>
+                    <li>Blowing company funds at the casino</li>
+                    <li>Navigating tax season with creative accounting</li>
+                    <li>...And much more!</li>
+                </ul>
+                 Sound fun? How long can you last?
             </div>
             <div class="about-image">
                 <img src="assets/images/screenshots/2.png" alt="Game Screenshot" style="width: 100%;">
