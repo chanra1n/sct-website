@@ -23,18 +23,14 @@
             text-transform: uppercase;
         }
 
-        html, body {
+            html, body {
     width: 100%;
-    height: 100%;
     font-family: 'pst';
     background: black;
     color: white;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
-    display: flex;
-    flex-direction: column;
+    overflow-x: hidden;
     filter: sepia(1) hue-rotate(45deg) blur(0px);
     font-size: 16px;
-    position: fixed; /* Prevents scrolling */
 }
     
         
@@ -109,7 +105,7 @@
     
         
         .hero {
-            height: 60vh;
+            height: 25vh;
     background-image: url('assets/images/background.png');
     background-size: cover;
     background-position: center;
@@ -258,15 +254,11 @@
             transition: transform 0.3s;
             filter: sepia(0) hue-rotate(-45deg) blur(0px) brightness(70%);
         }
-        
-        .gallery-item:hover {
-            transform: scale(1.03);
-        }
+    
         
         .gallery-item img {
             width: 100%;
     object-fit: cover;
-    cursor: pointer;
     object-position: top;
         }
         
@@ -278,18 +270,26 @@
         
         .footer-content {
             max-width: 1200px;
-            margin: 0 auto;
+    margin: 0 auto;
+    color: green;
+    font-family: 'gamer';
+        }
+
+        .footer-content p {
+            font-size: 3.25vh;
+            font-family: 'gamer';
         }
         
         .social-links {
-            margin-top: 20px;
+            margin-top: -20px;
+            margin-bottom: -20px;
         }
         
         .social-links a {
-            color: #ffffff;
-            margin: 0 10px;
-            font-size: 24px;
-            text-decoration: none;
+            color: #00ff00;
+    margin: 5px;
+    font-size: 4vh;
+    text-decoration: none;
         }
 
 
@@ -344,18 +344,22 @@
     
     /* Modal Image Styling */
     #image-modal img {
-        max-width: 80%;
-        max-height: 80vh;
-        border-radius: 0px;
-        box-shadow: 10px 10px 0px black;
-        user-select: none;
-        filter: sepia(0) hue-rotate(-45deg) blur(0px) brightness(0.75);
+        height: 75vh;
+    border-radius: 0px;
+    box-shadow: 10px 10px 0px black;
+    user-select: none;
+    filter: sepia(0) hue-rotate(-45deg) blur(0px) brightness(0.75);
     }
 
     .uk-modal-dialog {
-    background-color: #000000a0;
+        background-color: #000000a0;
     backdrop-filter: blur(10px);
     overflow: hidden;
+    height: auto;
+    width: 100%!important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
     }
 
     .uk-close {
@@ -373,10 +377,9 @@
                 <img loading="lazy" src="assets/images/logo_white.png" alt="Game Logo">
             </div>
             <ul class="nav-links">
-                <li class = "shimmer-effect-2"><a href="#home"><i class="ri-home-fill"></i> Home</a></li>
                 <li class = "shimmer-effect-2"><a href="#about"><i class="ri-information-2-fill"></i> About</a></li>
                 <li class = "shimmer-effect-2"><a href="#gallery"><i class="ri-multi-image-fill"></i> Gallery</a></li>
-                <li class = "shimmer-effect-2"><a href="#download"><i class="ri-external-link-fill"></i> Buy</a></li>
+                <li class = "shimmer-effect-2"><a href="https://chanrain.itch.io/scam-center-tycoon" target = "_blank"><i class="ri-external-link-fill"></i> Buy</a></li>
             </ul>
         </nav>
     </header>
@@ -437,21 +440,14 @@
         </div>
     </section>
 
-    <div id="image-modal" class="uk-modal-full" uk-modal onclick = "UIkit.modal('#image-modal').hide()" >
-        <div class="uk-modal-dialog uk-flex uk-flex-center uk-flex-middle" uk-height-viewport>
-            <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
-            <img loading="lazy" id="modal-image" src="" alt="Expanded Image">
-        </div>
-    </div>
-
     <footer>
         <div class="footer-content">
-            <p>&copy; 2023 Game Title. All rights reserved.</p>
+            <p>&copy; 2025 CHAN RAIN. All rights reserved.</p>
             <div class="social-links">
-                <a href="#">Twitter</a>
-                <a href="#">Discord</a>
-                <a href="#">Instagram</a>
-                <a href="#">YouTube</a>
+                <a href="#"><i class="ri-discord-fill"></i></a>
+                <a href="#"><i class="ri-instagram-fill"></i></a>
+                <a href="#"><i class="ri-tumblr-fill"></i></a>
+                <a href="#"><i class="ri-bluesky-fill"></i></a>
             </div>
         </div>
     </footer>
@@ -464,33 +460,6 @@
     window.onload = function() {
         window.scrollTo(0, 0);
     }
-    document.addEventListener("DOMContentLoaded", function () {
-        const images = document.querySelectorAll(".gallery .gallery-item img");
-        const modal = document.getElementById("image-modal");
-        const modalImage = document.getElementById("modal-image");
-
-        images.forEach(img => {
-            // Create zoom icon
-            const zoomIcon = document.createElement("i");
-            zoomIcon.className = "ri-zoom-in-line zoom-icon";
-            img.parentElement.appendChild(zoomIcon);
-
-            // Show zoom icon on hover
-            img.parentElement.addEventListener("mouseenter", () => {
-                zoomIcon.style.opacity = "1";
-            });
-
-            img.parentElement.addEventListener("mouseleave", () => {
-                zoomIcon.style.opacity = "0";
-            });
-
-            // Open image in modal
-            img.addEventListener("click", function () {
-                modalImage.src = this.src;
-                UIkit.modal(modal).show();
-            });
-        });
-    });
 </script>
 
 </body>
