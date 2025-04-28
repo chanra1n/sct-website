@@ -15,290 +15,313 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/icon.png">
     <style>
-        /* General Styles */
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'pst', sans-serif;
+            text-transform: uppercase;
+        }
 
-html, body {
+            html, body {
     width: 100%;
-    height: 100%;
     font-family: 'pst';
     background: black;
     color: white;
-    overflow: hidden; /* Ensures no scrolling */
-    display: flex;
-    flex-direction: column;
+    overflow-x: hidden;
     filter: sepia(1) hue-rotate(45deg) blur(0px);
     font-size: 16px;
-    position: fixed; /* Prevents scrolling */
 }
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'gamer';
-    text-transform: uppercase;
-    margin: 0;
-}
-
-/* Background Layers */
-#background-image, #fog-layer {
-    position: absolute;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    pointer-events: none;
-    user-select: none;
-}
-
-#background-image {
-    filter: blur(0.15rem);
-    transform: scale(1.1);
-}
-
-#fog-layer {
-    z-index: 1;
-    mix-blend-mode: luminosity;
-    opacity: 0.6;
-    filter: invert(1) brightness(0.4) contrast(1.1) blur(0.625rem);
-    transform: scale(1.05);
-}
-
-/* Navbar */
-.uk-navbar-container {
-    background: black !important;
-    padding: 0.75rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    
+        
+        header {
+            background-color: #000000;
+    padding: 2.5px 0;
     position: sticky;
     top: 0;
-    z-index: 10;
-    margin: 0.5rem;
-}
-
-.uk-navbar-left img {
-    width: 7.8125rem;
-    height: auto;
-}
-
-.uk-navbar-right button, #pageBody button {
-    background: black;
-    border: 0.156rem solid green;
-    padding: 0rem 1rem;
+    z-index: 100;
+        }
+        
+        nav {
+            max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    align-items: center;
-    color: green;
-    font-family: 'gamer';
-    font-size: 2rem;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-.uk-navbar-right button i, #pageBody button i {
-    font-size: 1.25rem;
-    margin-right: 0.5rem;
-    font-weight: 900;
-}
-
-.uk-navbar-right button span, #pageBody button span {
-    margin-bottom: 0.25rem;
-}
-
-.uk-navbar-right button:hover, #pageBody button:hover {
-    background: green;
-    color: black;
-}
-
-#pageBody button {
-    margin-top: 40px;
-    background-color: green;
-    color: black;
-    padding: 0.5rem 4rem;
-    font-size: 2.5rem;
-}
-
-#pageBody button i {
-    margin-right: 1rem;
-    font-size: 1.5rem;
-}
-
-/* Main Content */
-#pageBody {
-    flex-grow: 1;
-    width: calc(100% - 1rem);
-    max-width: 100%;
-    background-color: black;
-    color: white;
-    padding: 1rem;
-    margin: 0.5rem;
-    box-sizing: border-box;
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    overflow: hidden; /* Ensure no overflow here */
-    height: 100vh;
-    max-height: 100vh;
-    margin-top: 0px;
-}
-
-/* Content Wrapper */
-.content-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
     justify-content: space-between;
-    width: 100%;
-    gap: 2rem;
-    flex-wrap: nowrap;
-    height: 100%;
-}
-
-/* Text Section */
-.text-section {
-    flex: 1 1 auto;
-    max-width: 45%;
-    min-width: 25rem;
-    padding: 0.5rem;
-    overflow: visible;
-    text-overflow: ellipsis;
-    height: auto;
-    position: relative;
-}
-
-/* Image Grid */
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    width: 50%;
-    height: 100%;
-    max-height: 100%;
-    overflow-y: auto;
-    position: relative;
-    overflow-x: hidden; /* Ensure no horizontal scrolling */
-    flex-grow: 1;
-}
-
-.image-grid .image-section {
-    position: relative;
-    height: 0;
-    padding-bottom: 100%;
-    overflow: hidden;
-    background-color: black;
-    display: flex;
-    justify-content: center;
     align-items: center;
-}
+    padding: 0 20px;
+    background-color: black;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-right: 10px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
 
-.image-grid .image-section img {
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    filter: sepia(0) hue-rotate(-45deg) blur(0px) brightness(0.75);
-}
+        .logo img {
+            min-width: 150px;
+    height: auto;
+    width: 50px;
+    border: 20px solid transparent;
+    margin: -10px;
+        }
+        
+        .nav-links {
+            display: flex;
+    list-style: none;
+    margin: 0px;
+        }
+        
+        .nav-links li {
+            background-color: #002500;
+    padding: 0px 15px;
+    padding-bottom: 5px;
+    margin-left: 7.5px;
+    white-space: nowrap;
+        }
 
-/* The Hider */
-#image-grid-hider {
-    background-color: transparent;
-    position: sticky;
-    bottom: 0;
-    left: 0;
-    width: 250%;
-    height: 100px;
-    background-image: linear-gradient(0deg, black, transparent);
-    z-index: 2;
-    transform: scale(1.05);
-}
+        .nav-links li i {
+            font-size: 17.5px;
+        }
 
-/* Text Styling */
-#pageBody h1 {
-    font-size: 10vmin;
+        .nav-links li:hover {
+            animation: shimmer 2.5s infinite;
+            cursor: pointer;
+            box-shadow: 0px 5px 0px #001500;
+            transform: translateY(-5px);
+        }
+
+        
+        .nav-links a {
+            color: #00ff00;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-family: 'gamer';
+    font-size: 40px;
     line-height: normal;
-    color: white;
-    margin-top: -0.625rem;
-}
-
-#pageBody h2 {
-    font-size: 5vmin;
-    color: green;
-}
-
-#pageBody p {
-    font-family: 'pst';
-    font-size: 0.75rem;
-    text-transform: none;
+        }
+    
+        
+        .hero {
+            height: 25vh;
+    background-image: url('assets/images/background.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #005000;
+    mix-blend-mode: hard-light;
+        }
+        
+        .hero-content {
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero-content h1 {
+            font-size: 10vmin;
+    font-family: 'gamer';
     text-transform: uppercase;
-    margin-bottom: -20px;
+    color: white;
+    text-shadow: 5px 5px 0px #002500;
+    margin-top: -20px;
+        }
+        
+        .hero-content p {
+            font-size: 2vh;
+    background-color: black;
+    padding: 15px 20px;
+    margin-top: -20px;
+    color: #00ff00;
+        }
+        
+        .cta-button {
+            display: inline-block;
+    padding: 2.5px 30px;
+    background-color: black;
+    color: #ffffff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    font-family: 'gamer';
+    font-size: 50px;
+    line-height: normal;
+    padding-bottom: 10px;
+        }
+        
+        .cta-button:hover {
+            background-color: #ff5252;
+        }
+        
+        section {
+            max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 25px;
+    position: relative;
+    margin-top: 30px;
+    border: 5px solid #002500;
+    padding-bottom: 25px;
+    box-sizing: border-box;
+    width: calc(100% - 15px);
+        }
+        
+        section h2 {
+            font-size: 6vh;
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: 'gamer';
+    text-transform: uppercase;
+    transform: translateY(-32.5px);
+    background-color: black;
+    width: -webkit-fill-available;
+    text-align: center;
+    margin: auto;
+    margin-bottom: -15px;
+    line-height: normal;
+    padding: 15px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    max-width: 550px;
+        }
+        
+        .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: stretch; /* Changed from default to stretch */
 }
 
-#pageBody hr {
-    border: 0.125rem solid green;
-    margin-top: 0.5rem;
+.about-image {
+    display: flex; /* Add flexbox to the image container */
+    height: 100%; /* Ensure it takes full height */
 }
 
-@media (max-width: 48rem) {
+.about-text {
+    color: #00ff00;
+}
 
-    #pageBody button {
-        display:none;
+.about-text li {
+    margin-bottom: 10px;
+    list-style: square;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(0) hue-rotate(-45deg) blur(0px) brightness(70%);
+}
+
+@media (max-width: 768px) {
+    .about-image img {
+        display: none;
     }
 
-    .content-wrapper {
-        flex-direction: column;
-        align-items: flex-start;
+    .about-content {
+        display: block; /* Stack the elements on smaller screens */
     }
 
-    .text-section {
-        max-width: 100%;
-        min-width: unset;
-        padding: 0.5rem;
+
+    .hero-content h1 {
+    margin-top: -0px;
     }
 
-    .image-grid {
-        display: flex;
-        flex-direction: row;
-        overflow-x: auto; /* Allow horizontal scrolling */
-        width: 100%;
-        height: 100%; /* Ensure the grid takes full height */
-        flex-wrap: nowrap; /* Prevent wrapping */
-        overflow-y: hidden; /* Disable vertical scrolling */
-        position: relative; /* To prevent image overflow */
-    }
+}
 
-    .image-grid .image-section {
-        flex: 0 0 auto;
-        width: 100%; /* Ensure each image section takes full width */
-        max-width: 100%; /* Prevent images from overflowing */
-        height: 100%; /* Ensure the section takes full height */
-        display: flex;
-        justify-content: center; /* Center images horizontally */
-        overflow: hidden; /* Prevent any image from overflowing */
-    }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            overflow: hidden;
+            transition: transform 0.3s;
+            filter: sepia(0) hue-rotate(-45deg) blur(0px) brightness(70%);
+        }
+    
+        
+        .gallery-item img {
+            width: 100%;
+    object-fit: cover;
+    object-position: top;
+        }
+        
+        footer {
+            background-color: #000000;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+    margin: 0 auto;
+    color: green;
+    font-family: 'gamer';
+        }
 
-    .image-grid .image-section img {
-        width: 100%; /* Make sure the images resize within the available width */
-        height: 100%; /* Make sure images do not overflow vertically */
-        object-fit: contain; /* Ensure images fit within their parent without overflowing */
-        user-select: none;
-    }
+        .footer-content p {
+            font-size: 3.25vh;
+            font-family: 'gamer';
+        }
+        
+        .social-links {
+            margin-top: -20px;
+            margin-bottom: -20px;
+        }
+        
+        .social-links a {
+            color: #00ff00;
+    margin: 5px;
+    font-size: 4vh;
+    text-decoration: none;
+        }
 
-    #image-grid-hider {
-        display: none; /* Hide the hider on mobile */
-    }
 
-    .zoom-icon {
+        @keyframes shimmer {
+            0% {
+              background-position: 200% 0;
+            }
+            100% {
+              background-position: -200% 0;
+            }
+          }
+          
+          .shimmer-effect {
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 75%);
+            background-size: 200% 100%;
+          }
+
+          .shimmer-effect-2 {
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 75%);
+            background-size: 200% 100%;
+          }
+
+          .shimmer-effect-3 {
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.10) 50%, rgba(255, 255, 255, 0) 75%);
+            background-size: 200% 100%;
+          }
+
+
+          .zoom-icon {
         opacity: 100%!important;
     }
-}
+
     /* Zoom Icon Styling */
     .zoom-icon {
         position: absolute;
@@ -318,20 +341,25 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 2.5px 2.5px 0px green;
     }
 
+    
     /* Modal Image Styling */
     #image-modal img {
-        max-width: 80%;
-        max-height: 80vh;
-        border-radius: 0px;
-        box-shadow: 10px 10px 0px black;
-        user-select: none;
-        filter: sepia(0) hue-rotate(-45deg) blur(0px) brightness(0.75);
+        height: 75vh;
+    border-radius: 0px;
+    box-shadow: 10px 10px 0px black;
+    user-select: none;
+    filter: sepia(0) hue-rotate(-45deg) blur(0px) brightness(0.75);
     }
 
     .uk-modal-dialog {
-    background-color: #000000a0;
+        background-color: #000000a0;
     backdrop-filter: blur(10px);
     overflow: hidden;
+    height: auto;
+    width: 100%!important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
     }
 
     .uk-close {
@@ -343,109 +371,94 @@ h1, h2, h3, h4, h5, h6 {
     </style>
 </head>
 <body>
-
-<img loading="lazy" src="assets/images/background.png" id="background-image" />
-<img loading="lazy" src="assets/images/foggy.webp" id="fog-layer" />
-
-<!-- Navbar -->
-<nav class="uk-navbar-container">
-    <div class="uk-navbar-left">
-        <img loading="lazy" src="assets/images/logo_white.png" alt="Game Logo">
-    </div>
-    <div class="uk-navbar-right">
-        <button onclick = "window.location.href = 'https://chanrain.itch.io/scam-center-tycoon'">
-            <i class="ri-external-link-line"></i>
-            <span>BUY NOW</span>
-        </button>
-    </div>
-</nav>
-
-<!-- Main Content -->
-<div id="pageBody">
-    <div class="content-wrapper">
-        <!-- Left Text Section -->
-        <div class="text-section">
-            <h1>RISK, REWARD, REPEAT.</h1>
-            <h2>SCAM CENTER TYCOON is available now!</h2>
-            <hr>
-            <p>
-                Expand a burgeoning scam operation by renting or buying call centers, make shady deals for cash, and hire interns to boost profits. Manage your operation's size to avoid detection, invest in a legal team to defend against police, and navigate tax season with creative accounting. How long can you last?
-            </p>
-
-            <button onclick = "window.location.href = 'https://chanrain.itch.io/scam-center-tycoon'">
-                <i class="ri-external-link-line"></i>
-                <span>BUY NOW</span>
-            </button>
-
-        </div>
-
-        <!-- Right Image Grid -->
-        <div class="image-grid">
-            <div class="image-section">
-                <img loading="lazy" src="assets/images/screenshots/1.png" >
+    <header>
+        <nav>
+            <div class="logo">
+                <img loading="lazy" src="assets/images/logo_white.png" alt="Game Logo">
             </div>
-            <div class="image-section">
-                <img loading="lazy" src="assets/images/screenshots/2.png" >
-            </div>
-            <div class="image-section">
-                <img loading="lazy" src="assets/images/screenshots/3.png" >
-            </div>
-            <div class="image-section">
-                <img loading="lazy" src="assets/images/screenshots/4.png" >
-            </div>
-            <div class="image-section">
-                <img loading="lazy" src="assets/images/screenshots/5.png" >
-            </div>
-            <div class="image-section">
-                <img loading="lazy" src="assets/images/screenshots/6.png" >
-            </div>
-
-            <div id="image-grid-hider"></div>
+            <ul class="nav-links">
+                <li class = "shimmer-effect-2"><a href="#about"><i class="ri-information-2-fill"></i> About</a></li>
+                <li class = "shimmer-effect-2"><a href="#gallery"><i class="ri-multi-image-fill"></i> Gallery</a></li>
+                <li class = "shimmer-effect-2"><a href="https://chanrain.itch.io/scam-center-tycoon" target = "_blank"><i class="ri-external-link-fill"></i> Buy</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="hero" id="home">
+        <div class="hero-content">
+            <h1>RISK, REWARD, REPEAT</h1>
+            <p>SCAM CENTER TYCOON is available now!</p>
         </div>
     </div>
-</div>
+    
+    <section id="about">
+        <h2>Deception Meets Profit</h2>
+        <div class="about-content">
+            <div class="about-text">
+                TRY YOUR HAND IN THE WORLD OF BUSINESS! Expand your own burgeoning scam operation by...
+                <br>
+                <ul>
+                    <li>Renting/buying call center buildings</li>
+                    <li>Making shady trades for cash</li>
+                    <li>Hiring interns, lots of interns</li>
+                    <li>Managing your size to avoid detection</li>
+                    <li>Investing in your legal defense</li>
+                    <li>Training your expert legal team</li>
+                    <li>Blowing company funds at the casino</li>
+                    <li>Navigating tax season with creative accounting</li>
+                    <li>...And much more!</li>
+                </ul>
+                 Sound fun? How long can you make things last?
+            </div>
+            <div class="about-image">
+                <img src="assets/images/screenshots/2.png" alt="Game Screenshot" style="width: 100%;">
+            </div>
+        </div>
+    </section>
+    
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="assets/images/screenshots/1.png" alt="Game Screenshot 1">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/images/screenshots/2.png" alt="Game Screenshot 1">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/images/screenshots/3.png" alt="Game Screenshot 2">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/images/screenshots/4.png" alt="Game Screenshot 3">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/images/screenshots/5.png" alt="Game Screenshot 4">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/images/screenshots/6.png" alt="Game Screenshot 5">
+            </div>
+        </div>
+    </section>
 
-<div id="image-modal" class="uk-modal-full" uk-modal onclick = "UIkit.modal('#image-modal').hide()" >
-    <div class="uk-modal-dialog uk-flex uk-flex-center uk-flex-middle" uk-height-viewport>
-        <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
-        <img loading="lazy" id="modal-image" src="" alt="Expanded Image">
-    </div>
-</div>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 CHAN RAIN. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="ri-discord-fill"></i></a>
+                <a href="https://www.instagram.com/scamcentertycoon/"><i class="ri-instagram-fill"></i></a>
+                <a href="https://www.tumblr.com/scamcentertycoon"><i class="ri-tumblr-fill"></i></a>
+            </div>
+        </div>
+    </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.6.22/js/uikit.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.6.22/js/uikit-icons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.6.22/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.6.22/js/uikit-icons.min.js"></script>
 
+    
 <script>
     window.onload = function() {
         window.scrollTo(0, 0);
     }
-    document.addEventListener("DOMContentLoaded", function () {
-        const images = document.querySelectorAll(".image-grid .image-section img");
-        const modal = document.getElementById("image-modal");
-        const modalImage = document.getElementById("modal-image");
-
-        images.forEach(img => {
-            // Create zoom icon
-            const zoomIcon = document.createElement("i");
-            zoomIcon.className = "ri-zoom-in-line zoom-icon";
-            img.parentElement.appendChild(zoomIcon);
-
-            // Show zoom icon on hover
-            img.parentElement.addEventListener("mouseenter", () => {
-                zoomIcon.style.opacity = "1";
-            });
-
-            img.parentElement.addEventListener("mouseleave", () => {
-                zoomIcon.style.opacity = "0";
-            });
-
-            // Open image in modal
-            img.addEventListener("click", function () {
-                modalImage.src = this.src;
-                UIkit.modal(modal).show();
-            });
-        });
-    });
 </script>
 
 </body>
