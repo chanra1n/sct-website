@@ -69,8 +69,10 @@
             min-width: 150px;
     height: auto;
     width: 50px;
-    border: 20px solid black;
+    border: 20px solid transparent;
     margin: -10px;
+    filter: drop-shadow(2.5px 2.5px 0px #005000);
+    background-color: transparent;
         }
         
         .nav-links {
@@ -81,7 +83,7 @@
         
         .nav-links li {
             background-color: #002500;
-    padding: 5px 15px;
+    padding: 4px 15px;
     padding-bottom: 5px;
     margin-left: 7.5px;
     white-space: nowrap;
@@ -94,8 +96,8 @@
         .nav-links li:hover {
             animation: shimmer 2.5s infinite;
             cursor: pointer;
-            box-shadow: 0px 5px 0px #001500;
-            transform: translateY(-5px);
+            box-shadow: 0px 2.5px 0px #001500;
+            transform: translateY(-2.5px);
         }
 
         
@@ -155,6 +157,7 @@
     padding: 15px 20px;
     margin-top: -20px;
     color: #00ff00;
+    animation: shimmer 5s infinite;
         }
         
         .cta-button {
@@ -353,6 +356,19 @@
     box-shadow: 2.5px 2.5px 0px green;
     }
 
+
+    .price-ticker {
+        font-size: 25px;
+    background-color: #008000;
+    padding: 0px 10px;
+    font-family: 'gamer';
+    padding-bottom: 3px;
+    display: inline-block;
+    line-height: normal;
+    transform: translateY(-2px);
+    margin-right: -5px;
+    }
+
     </style>
 </head>
 <body>
@@ -364,7 +380,7 @@
             <ul class="nav-links">
                 <li class = "shimmer-effect-2"><a href="#about"><i class="ri-information-2-fill"></i> About</a></li>
                 <li class = "shimmer-effect-2"><a href="#gallery"><i class="ri-multi-image-fill"></i> Gallery</a></li>
-                <li class = "shimmer-effect-2"><a href="https://chanrain.itch.io/scam-center-tycoon" target = "_blank"><i class="ri-external-link-fill"></i> Buy</a></li>
+                <li class = "shimmer-effect-2"><a href="https://chanrain.itch.io/scam-center-tycoon" target = "_blank"><i class="ri-external-link-fill"></i> Buy <span class = "price-ticker">$14.99</span></a></li>
             </ul>
         </nav>
     </header>
@@ -372,7 +388,7 @@
     <div class="hero" id="home">
         <div class="hero-content">
             <h1>RISK, REWARD, REPEAT</h1>
-            <p>SCAM CENTER TYCOON is available now!</p>
+            <p class = "shimmer-effect-3">SCAM CENTER TYCOON is available now!</p>
         </div>
     </div>
     
