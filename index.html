@@ -36,6 +36,20 @@
     font-size: 16px;
     height: 100%;
 }
+
+
+html {
+    background-image: url('assets/images/loading3.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20vh;
+}
+
+body {
+    opacity:0%;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.8, 0, 0, 1);
+}
     
         
         header {
@@ -490,6 +504,8 @@
 <script>
     window.onload = function() {
         window.scrollTo(0, 0);
+        document.body.style.opacity = "100%";
+        document.body.style.pointerEvents = "auto";
     }
 </script>
 
