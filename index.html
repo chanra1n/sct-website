@@ -27,13 +27,14 @@
         }
 
             html, body {
-    width: 100%;
+                width: 100%;
     font-family: 'pst';
     background: black;
     color: white;
     overflow-x: hidden;
     filter: sepia(1) hue-rotate(45deg) blur(0px);
     font-size: 16px;
+    height: 100%;
 }
     
         
@@ -56,6 +57,7 @@
     overflow-x: auto;
     overflow-y: hidden;
     padding-right: 10px;
+    height: 40px;
         }
         
         .logo {
@@ -67,7 +69,7 @@
             min-width: 150px;
     height: auto;
     width: 50px;
-    border: 20px solid transparent;
+    border: 30px solid black;
     margin: -10px;
         }
         
@@ -79,14 +81,14 @@
         
         .nav-links li {
             background-color: #002500;
-    padding: 0px 15px;
+    padding: 2.5px 15px;
     padding-bottom: 5px;
     margin-left: 7.5px;
     white-space: nowrap;
         }
 
         .nav-links li i {
-            font-size: 17.5px;
+            font-size: 14px;
         }
 
         .nav-links li:hover {
@@ -102,8 +104,10 @@
     text-decoration: none;
     transition: color 0.3s;
     font-family: 'gamer';
-    font-size: 40px;
-    line-height: normal;
+    font-size: 30px;
+    line-height: 15px;
+    padding: 0px;
+    margin: 0px;
         }
     
         
@@ -347,33 +351,6 @@
     margin: 10px;
     line-height: normal;
     box-shadow: 2.5px 2.5px 0px green;
-    }
-
-    
-    /* Modal Image Styling */
-    #image-modal img {
-        height: 75vh;
-    border-radius: 0px;
-    box-shadow: 10px 10px 0px black;
-    user-select: none;
-    filter: sepia(0) hue-rotate(-45deg) blur(0px) brightness(0.75);
-    }
-
-    .uk-modal-dialog {
-        background-color: #000000a0;
-    backdrop-filter: blur(10px);
-    overflow: hidden;
-    height: auto;
-    width: 100%!important;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    }
-
-    .uk-close {
-        background-color: black;
-    margin: 10px;
-    font-weight: 900;
     }
 
     </style>
