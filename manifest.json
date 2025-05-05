@@ -1,0 +1,28 @@
+{
+    "name": "SCAM CENTER TYCOON",
+    "short_name": "SCT",
+    "description": "RISK, REWARD, REPEAT - SCAM CENTER TYCOON IS AVAILABLE NOW!",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#000000",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "assets/images/icon.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "assets/images/icon.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": ["games", "entertainment"],
+    "lang": "en-US",
+    "dir": "ltr",
+    "prefer_related_applications": false
+}
